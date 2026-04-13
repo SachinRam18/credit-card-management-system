@@ -1,5 +1,19 @@
 const API = '/api';
 
+// Authentication Check
+document.addEventListener('DOMContentLoaded', () => {
+    if (!localStorage.getItem('user')) {
+        window.location.href = 'login.html';
+    } else {
+        loadCards();
+    }
+});
+
+function logout() {
+    localStorage.removeItem('user');
+    window.location.href = 'login.html';
+}
+
 // 1. Add Card
 async function addCard() {
     const name = document.getElementById('cardName').value.trim();
@@ -98,5 +112,4 @@ function clearForm() {
     document.getElementById('cardLimit').value = '';
 }
 
-// Load on page start
-window.onload = loadCards;
+// Load handled by DOMContentLoaded
