@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Card Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>💳 Credit Card Manager</h1>
+
+        <!-- Add Card Form -->
+        <div class="card-form">
+            <h2>Add New Card</h2>
+            <input type="text" id="cardName" placeholder="Cardholder Name" maxlength="30">
+            <input type="text" id="cardNumber" placeholder="Card Number (16 digits)" maxlength="19">
+            <input type="text" id="cardExpiry" placeholder="Expiry (MM/YY)" maxlength="5">
+            <input type="number" id="cardLimit" placeholder="Spending Limit (₹)" min="0">
+            <button onclick="addCard()">Add Card</button>
+        </div>
+
+        <!-- Search -->
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="🔍 Search by name or card number..." oninput="searchCards()">
+        </div>
+
+        <!-- Summary -->
+        <div class="summary" id="summary">
+            <p>Total Cards: <span id="totalCards">0</span></p>
+            <p>Total Credit Limit: ₹<span id="totalLimit">0</span></p>
+        </div>
+
+        <!-- Card List -->
+        <div id="cardList" class="card-list">
+            <p class="empty-msg" id="emptyMsg">No cards added yet.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
